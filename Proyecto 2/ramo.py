@@ -1,10 +1,11 @@
 class Ramo:
-    __tamaño=str
+    __tamaño=0
     __flores=[]
+
     def __init__(self,tamaño,flores=None):
         self.__tamaño=tamaño
         if(flores!=None):
-            self.setFlores(flores,1)
+            self.setFlores(flores)
     def setFlores(self,flor):
-        for p in flor:
-            self.__flores.append(p)
+        for i in flor:
+            self.__flores.append(i)
