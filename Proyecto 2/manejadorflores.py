@@ -23,3 +23,14 @@ class ManejaFlores:
             flor=Flores(int(fila[0]),fila[1],fila[2],fila[3])
             self.agregarFlor(flor)
         print('archivo leido')
+    def Mostrar(self):
+        for i in self.__flores:
+            print(i)
+    def buscarFlor(self,elemento):
+        i=0
+        resultado=None
+        while i<len(self.__flores) and elemento!=self.__flores[i].getCodigo():
+            i+=1
+        if i<len(self.__flores):
+            resultado=self.__flores[i]
+        return resultado

@@ -6,17 +6,18 @@ class Menu:
         self.__switcher= {'1':self.opcion1,
                           '2':self.opcion2,
                           '3':self.salir}
-    def opcion(self,op,manejador):
+    def opcion(self,op,manejadorF,manejadorR):
         func=self.__switcher.get(op,lambda: print('Opcion no valida'))
         if(op=='1' or op=='2'):
-            func(manejador)
+            func(manejadorF,manejadorR)
         else:
             func()
-    def opcion1(self,manejador):
-        if(type(manejador)==ManejaRamo):
-            manejador.Venta()
-    def opcion2(self,manejador):
-        if(type(manejador)==ManejaFlores):
+    def opcion1(self,manejadorF,manejadorR):
+        if(type(manejadorR)==ManejaRamo and type(manejadorF)==ManejaFlores):
+            manejadorF.Mostrar()
+            manejadorR.Venta(manejadorF)
+    def opcion2(self,manejadorF,manejadorR):
+        if(type(manejadorR)==ManejaRamo and type(manejadorF)==ManejaFlores):
             pass
     def salir(self):
         print('finalizado...')

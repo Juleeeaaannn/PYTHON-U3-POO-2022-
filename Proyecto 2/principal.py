@@ -9,13 +9,13 @@ if __name__=='__main__':
     salir=False
     while not salir:
         print('------------------------------------------')
-        print('1.')
+        print('1.Registrar ramo vendido')
         print('2.')
         print('3.Salir')
         op=input('->')
         print('------------------------------------------')
         if(op=='1'):
-            menu.opcion(op,manejadorR)
+            menu.opcion(op,manejadorF,manejadorR)
         salir = op =='3'
 
 
