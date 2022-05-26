@@ -22,14 +22,16 @@ class ManejaRamo:
                     print('Flor agregada al ramo!')
                 else:
                     print('Esa flor no la tenemos a la venta!')
-        if(lista!=None):
-            ramo=Ramo(i,lista)
+        if(i!=0):
+            ramo=Ramo(i)
+            ramo.setFlores(lista)
             print(ramo)
             self.__lista.append(ramo)
             print("---------------------------------------------------------------------")
             print('Ramo vendido!')
-            print("---------------------------------------------------------------------")
     def RamosVendidos(self):
-        for ramo in self.__lista:
-            listaF=ramo.getFlores()
-
+        ramo=input('ingrese tipo de ramo:')
+        for i in self.__lista:
+            if(i.getTipo()==ramo):
+                print('flores-----\n{}'.format(i.mostrarFlores()))
+            else: print('no se encontro ramo...')

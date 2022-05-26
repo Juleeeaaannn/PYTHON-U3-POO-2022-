@@ -2,9 +2,9 @@ import numpy as np
 from flores import Flores
 import csv
 class ManejaFlores:
-    __dimension=10
+    __dimension=12
     __cantidad=0
-    __incremento=2
+    __incremento=1
     def __init__(self):
         self.__flores=np.empty(self.__dimension,dtype=Flores)
     def agregarFlor(self,flor):
@@ -34,3 +34,8 @@ class ManejaFlores:
         if i<len(self.__flores):
             resultado=self.__flores[i]
         return resultado
+    def MostrarFlores(self):
+        self.__flores.sort()
+        print('----------------flores vendidas-----------------')
+        for i in range(0,5):
+            print('Nombre:{}'.format(self.__flores[i].getNombre()))
