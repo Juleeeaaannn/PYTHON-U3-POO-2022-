@@ -17,7 +17,7 @@ class ManejaFlores:
             self.__flores[self.__cantidad]=flor #AGREGO UNA FLOR AL ARREGLO
             self.__cantidad += 1 #ACUMULO CANTIDAD DE FLORES
     def LeerArchivo(self):
-        archivo=open('flores.csv')
+        archivo=open('Proyecto 2/flores.csv')
         reader=csv.reader(archivo, delimiter=',')
         for fila in reader:
             flor=Flores(int(fila[0]),fila[1],fila[2],fila[3])
@@ -38,4 +38,5 @@ class ManejaFlores:
         self.__flores.sort()
         print('----------------flores vendidas-----------------')
         for i in range(0,5):
-            print('Nombre:{}'.format(self.__flores[i].getNombre()))
+            if(self.__flores[i].getVendidas()!=0):
+                print('Nombre:{}'.format(self.__flores[i].getNombre()))

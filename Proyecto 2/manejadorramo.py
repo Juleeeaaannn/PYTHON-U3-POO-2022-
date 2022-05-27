@@ -33,5 +33,5 @@ class ManejaRamo:
         ramo=input('ingrese tipo de ramo:')
         for i in self.__lista:
             if(i.getTipo()==ramo):
-                print('flores-----\n{}'.format(i.mostrarFlores()))
-            else: print('no se encontro ramo...')
+                print('flores-----\n')
+                i.mostrarFlores()
