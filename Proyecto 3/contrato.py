@@ -1,4 +1,4 @@
-class contrato:
+class Contrato:
     __fdeinicio=''
     __fdefinalizacion=''
     __pagomensual=0.0
