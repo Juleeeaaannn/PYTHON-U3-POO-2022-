@@ -10,4 +10,12 @@ class Contrato:
         self.__pagomensual=pagomensual
         self.__equipo=equipo
         self.__jugador=jugador
+    def getJugador(self):
+        return self.__jugador
+    def getEquipo(self):
+        return self.__equipo
+    def getFechaf(self):
+        return self.__fdefinalizacion
+    def getFechai(self):
+        return self.__fdeinicio
         

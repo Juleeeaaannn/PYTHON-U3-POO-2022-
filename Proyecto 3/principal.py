@@ -11,14 +11,15 @@ if __name__=='__main__':
     salir=False
     while not salir:
         print('------------------------------------------')
-        print('1.')
-        print('2.')
-        print('3.')
-        print('4.Salir')
+        print('1.Crear un Jugador o Aleatorio')
+        print('2.Crear Contrato')
+        print('3.Consultar Jugador Contratado')
+        print('4.Consultar Contratos')
+        print('5.Salir')
         op=input('->')
         print('------------------------------------------')
-        if(op=='1' or op=='2' or op=='3'):
+        if(op=='1' or op=='2' or op=='3' or op=='4'):
             menu.opcion(op,manejadorJ,manejadorC,manejadorE)
-        salir = op =='4'
+        salir = op =='5'
 
 
