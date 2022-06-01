@@ -18,11 +18,16 @@ class ManejaEquipo:
             self.__equipos[self.__cantidad]=equipo
             self.__cantidad+=1
     def LeerArchivo(self):
+        band=True
         archivo=open("equipos.csv")
         reader=csv.reader(archivo,delimiter=';')
         for fila in reader:
-            equipo1=Equipo(fila[0],fila[1])
-            self.agregar(equipo1)
+            if(band):
+                band=False
+            else:       
+                equipo1=Equipo(fila[0],fila[1])
+                self.agregar(equipo1)
+        archivo.close()
     def mostrarEquipos(self):
         print('----------------Equipos----------------')
         for i in self.__equipos:
@@ -37,11 +42,31 @@ class ManejaEquipo:
         else:print('Equipo no econtrado!')
         return retorna
     def ConsultarContratos(self):
-        id=input('Ingrese Nombre del equipo:')
+        id=input('Ingrese nombre del equipo:')
+        meshoy=int(input('Ingrese mes en el que estamos(ej:5):'))
         equipo=self.Buscar(id)
         lista=equipo.getContratos()
         if(len(lista)==0):
-            print('El equipo no tiene contratos con ningun jugador')
+            print('El equipo no tiene contrato con ningun jugador!')
         else:    
-            for i in equipo.getContratos():    
-                print(i.getJugador())
+            for i in equipo.getContratos():
+                fechaf=i.getFechaf()
+                mesf=int(fechaf[fechaf.find('/')+1:fechaf.find('/2')])
+                mesf=mesf-6
+                if mesf <= meshoy:
+                    print('A estos jugadores se les vence en 6 meses el contrato:')
+                    print('----------')
+                    print(i.getJugador())
+                    print('----------')
+    def ImportedeContratos(self):
+        contador=0.0
+        print('-------------Importe de Contratos-------------')
+        id=input('Ingrese nombre del equipo:')
+        equipo=self.Buscar(id)
+        lista=equipo.getContratos()
+        if(len(lista)==0):
+            print('El equipo no tiene contrato con ningun jugador!')
+        else:    
+            for i in equipo.getContratos():
+                contador+=i.getPago()
+            print('La cantidad que debe pagar el club es:{:.2f}'.format(contador))

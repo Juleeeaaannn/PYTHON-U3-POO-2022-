@@ -18,4 +18,6 @@ class Contrato:
         return self.__fdefinalizacion
     def getFechai(self):
         return self.__fdeinicio
+    def getPago(self):
+        return self.__pagomensual
         

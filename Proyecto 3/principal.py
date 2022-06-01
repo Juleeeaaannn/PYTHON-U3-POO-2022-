@@ -15,11 +15,13 @@ if __name__=='__main__':
         print('2.Crear Contrato')
         print('3.Consultar Jugador Contratado')
         print('4.Consultar Contratos')
-        print('5.Salir')
+        print('5.Obtener importe de contratos')
+        print('6.Crear archivo con los contratos')
+        print('7.Salir')
         op=input('->')
         print('------------------------------------------')
-        if(op=='1' or op=='2' or op=='3' or op=='4'):
+        if(op=='1' or op=='2' or op=='3' or op=='4' or op=='5' or op=='6'):
             menu.opcion(op,manejadorJ,manejadorC,manejadorE)
-        salir = op =='5'
+        salir = op =='7'
 
 

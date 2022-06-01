@@ -1,4 +1,5 @@
 import numpy as np
+import csv
 from contrato import Contrato
 class ManejaContrato:
     __dimension=1
@@ -28,3 +29,15 @@ class ManejaContrato:
         if(i<len(self.__contratos)):
             print('Equipo:{} \n Fecha de Finalizacion:{}'.format(self.__contratos[i].getEquipo().getNombre(),self.__contratos[i].getFechaf()))
         else: print('Jugador no contratado!')
+    def ArchivoContrato(self):
+        with open('contratos.csv','w') as csvfile:
+            cabecera=['DNI del jugador','Equipo','fecha de inicio','fecha de fin','pago mensual']
+            writer=csv.writer(csvfile)
+            writer.writerow(cabecera)
+            for i in self.__contratos:
+                writer.writerow([i.getJugador().getDni(),
+                                i.getEquipo().getNombre(),
+                                i.getFechai(),
+                                i.getFechaf(),
+                                i.getPago()])
+        print('Archivo creado con exito!')
