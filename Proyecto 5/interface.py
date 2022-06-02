@@ -1,12 +1,12 @@
 from zope.interface import interface
 from zope.interface import implementer
 class Ielemento(interface):
-    def instertarElemento():
+    def instertarElemento(elemento):
         #para insertar un objeto en una posición determinada 
         #en una colección, teniendo en cuenta el manejo de excepciones 
         #cuando la posición donde se vaya a insertar no sea válida.
         pass
-    def agregarElemento():
+    def agregarElemento(posicion,elemento):
         #para agregar un elemento al final de una colección
         pass
     def mostrarElemento():
