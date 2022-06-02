@@ -6,9 +6,20 @@ class Televisor(Aparato):
     __pulgadas=''
     __tipoDefinicion=''
     __conexion=False
-    def __init__(self,marca,modelo,color,pais,precio,capacidadLavado,velocidadCentrifugado,cantiProgramas,tipoCarga,capacidadLitros,frezzer,ciclica,tipoPantalla,pulgadas,tipoDefinicion,conexion):
-        super().__init__(self,marca,modelo,color,pais,precio,capacidadLavado,velocidadCentrifugado,cantiProgramas,tipoCarga,capacidadLitros,frezzer,ciclica,tipoPantalla,pulgadas,tipoDefinicion,conexion)
-        self.__tipoPantalla
-        self.__pulgadas
-        self.__tipoDefinicion
-        self.__conexion
+    def __init__(self,marca,modelo,color,pais,precio,tipoPantalla,pulgadas,tipoDefinicion,conexion):
+        super().__init__(self,marca,modelo,color,pais,precio,tipoPantalla,pulgadas,tipoDefinicion,conexion)
+        self.__tipoPantalla=tipoPantalla
+        self.__pulgadas=pulgadas
+        self.__tipoDefinicion=tipoDefinicion
+        self.__conexion=conexion
+    def toJSON(self):
+        d = dict(
+                __class__=self.__class__.__name__,
+                __atributos__=dict(
+                tipoPantalla=self.__tipoPantalla,
+                pulgadas=self.__pulgadas,
+                tipoDefinicion=self.__tipoDefinicion,
+                conexion=self.__conexion
+                )
+                )
+        return d
