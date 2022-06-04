@@ -1,15 +1,14 @@
-from pyrsistent import freeze
 from aparato import Aparato
 
 
 class Heladera(Aparato):
     __capacidadLitros=0
-    __frezzer=False
+    __freezer=False
     __ciclica=False
-    def __init__(self,marca,modelo,color,pais,precio,capacidadLitros,frezzer,ciclica):
-        super().__init__(marca,modelo,color,pais,precio,capacidadLitros,frezzer,ciclica)
+    def __init__(self,marca,modelo,color,pais,precio,capacidadLitros,freezer,ciclica):
+        super().__init__(marca,modelo,color,pais,precio)
         self.__capacidadLitros=capacidadLitros
-        self.__frezzer=frezzer
+        self.__freezer=freezer
         self.__ciclica=ciclica
     def toJSON(self):
         d = dict(

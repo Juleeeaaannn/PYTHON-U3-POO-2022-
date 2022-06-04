@@ -7,7 +7,7 @@ class Televisor(Aparato):
     __tipoDefinicion=''
     __conexion=False
     def __init__(self,marca,modelo,color,pais,precio,tipoPantalla,pulgadas,tipoDefinicion,conexion):
-        super().__init__(self,marca,modelo,color,pais,precio,tipoPantalla,pulgadas,tipoDefinicion,conexion)
+        super().__init__(marca,modelo,color,pais,precio)
         self.__tipoPantalla=tipoPantalla
         self.__pulgadas=pulgadas
         self.__tipoDefinicion=tipoDefinicion

@@ -1,8 +1,9 @@
 from zope.interface import implementer
 from aparato import Aparato
-#from ej5 import Interface
+from ej5 import Interface
 from nodo import Nodo
-class Lista():
+@implementer(Interface)
+class Manejador:
     __comienzo=None
     __actual=None
     __indice=0
@@ -23,7 +24,15 @@ class Lista():
             self.__actual=self.__actual.getSiguiente()
             return dato
     def instertarElemento(self,posicion,elemento):
-        pass
+        aux=self.__comienzo
+        i=0
+        while aux!=None:
+            if(i==posicion):
+                aux.setSiguiente(elemento)
+                aux=None
+            i+=1
+            aux=aux.getSiguiente()
+
     def agregarElemento(self,elemento):
         #para agregar un elemento al final de una colección
         nodo = Nodo(elemento)
@@ -31,18 +40,16 @@ class Lista():
         self.__actual=nodo
         self.__tope+=1
     def mostrarElemento(self):
-        try:
-            cont=0
-            id=input('Ingrese posicion de el elemento que desea encontrar:')
-            aux = self.__comienzo
-            while aux!=None:
-                if(self.__contador==id):
-                    print(aux.getDato())
-                    aux=None
-                else:
-                    aux=aux.getSiguiente()
-        except SyntaxError:
-            print('Ingrese una posicion correcta en el arreglo!')
+        id=input('Ingrese posicion de el elemento que desea encontrar:')
+        aux = self.__comienzo
+        i=0
+        while aux!=None:
+            if(i==id):
+                print(aux.getDato())
+                aux=None
+            else:
+                i+=1
+                aux=aux.getSiguiente()
     def toJSON(self):
         d = dict(
             __class__=self.__class__.__name__,
