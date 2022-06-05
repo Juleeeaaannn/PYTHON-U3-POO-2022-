@@ -10,6 +10,16 @@ class Lavarropas(Aparato):
         self.__velocidadCentrifugado=velocidadCentrifugado
         self.__cantiProgramas=cantiProgramas
         self.__tipoCarga=tipoCarga
+    def getPais(self):
+        return super().getPais()
+    def getMarca(self):
+        return super().getMarca()
+    def getPrecioBase(self):
+        return super().getPrecioBase()
+    def getCapacidadLavado(self):
+        return self.__capacidadLavado
+    def getTipo(self):
+        return 'Lavarropa'
     def toJSON(self):
         d = dict(
                 __class__=self.__class__.__name__,

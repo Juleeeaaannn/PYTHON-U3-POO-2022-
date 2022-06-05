@@ -1,6 +1,4 @@
 from aparato import Aparato
-
-
 class Televisor(Aparato):
     __tipoPantalla=''
     __pulgadas=''
@@ -12,6 +10,18 @@ class Televisor(Aparato):
         self.__pulgadas=pulgadas
         self.__tipoDefinicion=tipoDefinicion
         self.__conexion=conexion
+    def getPais(self):
+        return super().getPais()
+    def getTipo(self):
+        return 'Televisor'
+    def getMarca(self):
+        return super().getMarca()
+    def getPrecioBase(self):
+        return super().getPrecioBase()
+    def getTipoDefinicion(self):
+        return self.__tipoDefinicion
+    def getConexion(self):
+        return self.__conexion
     def toJSON(self):
         d = dict(
                 __class__=self.__class__.__name__,

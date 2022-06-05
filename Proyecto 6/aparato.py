@@ -10,3 +10,11 @@ class Aparato:
         self.__color=color
         self.__paisdefabricacion=pais
         self.__preciobase=precio
+    def getPais(self):
+        self.__paisdefabricacion
+    def getPrecioBase(self):
+        return self.__preciobase
+    def getMarca(self):
+        return self.__marca
+    def __str__(self):
+        return('Marca:{} Modelo:{} Color:{} Pais de Fabricacion:{} Precio Base:{}'.format(self.__marca,self.__modelo,self.__color,self.__paisdefabricacion,self.__preciobase))
