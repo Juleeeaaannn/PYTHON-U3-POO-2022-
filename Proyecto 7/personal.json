@@ -1,0 +1,45 @@
+{
+    "__class__": "Manejador",
+    "personales": [
+        {
+            "__class__": "DocenteInvestigador",
+            "__atributos__": {
+                "cuil": null,
+                "apellido": "investiga",
+                "nombre": "doc",
+                "sueldo": 100000,
+                "antiguedad": null,
+                "cargo": "simple",
+                "catedra": "ANATOMI2",
+                "area": "Campo",
+                "tipoInvestigacion": "Restaurar la paz mundial",
+                "categoriaInventivo": "I",
+                "extra": "10000"
+            }
+        },
+        {
+            "__class__": "Investigador",
+            "__atributos__": {
+                "cuil": "20-43244242-4",
+                "apellido": "rosales",
+                "nombre": "rosa",
+                "sueldo": 100000,
+                "antiguedad": "30",
+                "area": "Campo",
+                "tipoInvestigacion": "Restaurar la paz mundial"
+            }
+        },
+        {
+            "__class__": "Docente",
+            "__atributos__": {
+                "cuil": null,
+                "apellido": "roman",
+                "nombre": "jorge",
+                "sueldo": 100000,
+                "antiguedad": null,
+                "cargo": "semiexclusivo",
+                "catedra": "ANATOMIA"
+            }
+        }
+    ]
+}
