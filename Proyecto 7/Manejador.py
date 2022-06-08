@@ -3,6 +3,9 @@ from docenteinvestigador import DocenteInvestigador
 from investigador import Investigador
 from nodo import Nodo
 from personalapoyo import PersonaldeApoyo
+from ej5 import Iinterface
+from zope.interface import implementer
+@implementer(Iinterface)
 class Manejador:
     __comienzo=None
     __actual=None
