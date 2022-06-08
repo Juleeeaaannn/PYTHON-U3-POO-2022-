@@ -1,5 +1,6 @@
-from zope.interface import interface
-class ITesorero (interface):
+#DE ESTA MANERA ME FUNCIONO NO CON EL (ITERFACE)
+import zope.interface
+class ITesorero (zope.interface.Interface):
 
     def gastosSueldoPorEmpleado ( dni):
 
@@ -7,7 +8,7 @@ class ITesorero (interface):
 
  
 
-class IDirector (interface):
+class IDirector (zope.interface.Interface):
 
     def modificarBasico(dni, nuevoBasico):
 
