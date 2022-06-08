@@ -60,11 +60,11 @@ class Menu:
         if(type(Manejador)==MJ and type(JSONF)==Encoder):
             u=input('Ingrese usuario:')
             c=input('Ingrese contraseña:')
-            #if(u=='uTesoreso' and c=='ag@74ck'):
-            tesorero(ITesorero(Manejador))
-            #elif(u=='uDirector' and c=='ufC77#!1'):
-            #director(IDirector(Manejador))
-            #else:
-               # print('Error de usuario y contraseña')
+            if(u=='uTesoreso' and c=='ag@74ck'):
+                tesorero(ITesorero(Manejador))
+            elif(u=='uDirector' and c=='ufC77#!1'):
+                director(IDirector(Manejador))
+            else:
+                print('Error de usuario y contraseña')
     def salir(self):
         print('saliendo...')
